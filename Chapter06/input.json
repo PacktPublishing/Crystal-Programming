@@ -1,15 +1,13 @@
 [
     {
         "id": 1,
-        "author":
-        {
+        "author": {
             "name": "Jim"
         }
     },
     {
         "id": 2,
-        "author":
-        {
+        "author": {
             "name": "Bob"
         }
     }
