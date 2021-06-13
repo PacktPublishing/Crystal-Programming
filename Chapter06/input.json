@@ -1,27 +1,16 @@
-[ 
-
-    { 
-
-        "id": 1, 
-
-        "author": { 
-
-            "name": "Jim" 
-
-        } 
-
-    }, 
-
-    { 
-
-        "id": 2, 
-
-        "author": { 
-
-            "name": "Bob" 
-
-        } 
-
-    } 
-
-] 
+[
+    {
+        "id": 1,
+        "author":
+        {
+            "name": "Jim"
+        }
+    },
+    {
+        "id": 2,
+        "author":
+        {
+            "name": "Bob"
+        }
+    }
+]
