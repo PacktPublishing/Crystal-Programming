@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"io"
 	"net/http"
 )
 
 func hello(w http.ResponseWriter, req *http.Request) {
-	w.Header().Add("Content-Type", "text/json")
-	fmt.Fprintf(w, "Hello World")
+	w.Header().Add("Content-Type", "text/plain")
+	io.WriteString(w, "Hello World!")
 }
 
 func main() {
