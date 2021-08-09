@@ -6,7 +6,7 @@ class Transform::Notification
   getter icon : String?
 
   def initialize(@summary : String, @body : String, @icon : String? = nil)
-    @notification = LibNotify.notify_notification_new summary, body, icon
+    @notification = LibNotify.notify_notification_new @summary, @body, @icon
   end
 
   def summary=(@summary : String) : Nil
