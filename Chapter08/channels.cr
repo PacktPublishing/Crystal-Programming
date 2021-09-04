@@ -1,9 +1,10 @@
-channel = Channel(Int32).new
+input_channel = Channel(Int32).new
+output_channel = Channel(Int32).new
 
 spawn do
-  channel.send channel.receive * 2
+  output_channel.send input_channel.receive * 2
 end
 
-channel.send 2
+input_channel.send 2
 
-puts channel.receive
+puts output_channel.receive

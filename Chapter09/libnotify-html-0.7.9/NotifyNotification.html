@@ -1,0 +1,1304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NotifyNotification: Libnotify Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libnotify Reference Manual">
+<link rel="up" href="ch01.html" title="Libnotify">
+<link rel="prev" href="libnotify-notify.html" title="notify">
+<link rel="next" href="api-index-full.html" title="Index">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NotifyNotification.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NotifyNotification.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NotifyNotification.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#NotifyNotification.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libnotify-notify.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NotifyNotification"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NotifyNotification.top_of_page"></a>NotifyNotification</span></h2>
+<p>NotifyNotification — A passive pop-up notification.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NotifyNotification.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="NotifyNotification.html#NotifyActionCallback" title="NotifyActionCallback ()">*NotifyActionCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#NOTIFY-ACTION-CALLBACK:CAPS" title="NOTIFY_ACTION_CALLBACK()">NOTIFY_ACTION_CALLBACK</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="returnvalue">NotifyNotification</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-new" title="notify_notification_new ()">notify_notification_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-update" title="notify_notification_update ()">notify_notification_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-show" title="notify_notification_show ()">notify_notification_show</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-app-name" title="notify_notification_set_app_name ()">notify_notification_set_app_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-timeout" title="notify_notification_set_timeout ()">notify_notification_set_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-category" title="notify_notification_set_category ()">notify_notification_set_category</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-urgency" title="notify_notification_set_urgency ()">notify_notification_set_urgency</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-icon-from-pixbuf" title="notify_notification_set_icon_from_pixbuf ()">notify_notification_set_icon_from_pixbuf</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-image-from-pixbuf" title="notify_notification_set_image_from_pixbuf ()">notify_notification_set_image_from_pixbuf</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()">notify_notification_set_hint</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-int32" title="notify_notification_set_hint_int32 ()">notify_notification_set_hint_int32</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-uint32" title="notify_notification_set_hint_uint32 ()">notify_notification_set_hint_uint32</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-double" title="notify_notification_set_hint_double ()">notify_notification_set_hint_double</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-string" title="notify_notification_set_hint_string ()">notify_notification_set_hint_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-byte" title="notify_notification_set_hint_byte ()">notify_notification_set_hint_byte</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-set-hint-byte-array" title="notify_notification_set_hint_byte_array ()">notify_notification_set_hint_byte_array</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-clear-hints" title="notify_notification_clear_hints ()">notify_notification_clear_hints</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-add-action" title="notify_notification_add_action ()">notify_notification_add_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-clear-actions" title="notify_notification_clear_actions ()">notify_notification_clear_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-close" title="notify_notification_close ()">notify_notification_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NotifyNotification.html#notify-notification-get-closed-reason" title="notify_notification_get_closed_reason ()">notify_notification_get_closed_reason</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--app-name" title="The “app-name” property">app-name</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--body" title="The “body” property">body</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--closed-reason" title="The “closed-reason” property">closed-reason</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--icon-name" title="The “icon-name” property">icon-name</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="NotifyNotification.html#NotifyNotification--summary" title="The “summary” property">summary</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NotifyNotification.html#NotifyNotification-closed" title="The “closed” signal">closed</a></td>
+<td class="signal_flags"><a href="../gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NotifyNotification.html#NOTIFY-EXPIRES-DEFAULT:CAPS" title="NOTIFY_EXPIRES_DEFAULT">NOTIFY_EXPIRES_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NotifyNotification.html#NOTIFY-EXPIRES-NEVER:CAPS" title="NOTIFY_EXPIRES_NEVER">NOTIFY_EXPIRES_NEVER</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="NotifyNotification.html#NotifyNotification-struct" title="struct NotifyNotification">NotifyNotification</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NotifyNotification.html#NotifyUrgency" title="enum NotifyUrgency">NotifyUrgency</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> NotifyNotification
+</pre>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.description"></a><h2>Description</h2>
+<p><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> represents a passive pop-up notification. It can
+contain summary text, body text, and an icon, as well as hints specifying
+how the notification should be presented. The notification is rendered
+by a notification daemon, and may present the notification in any number
+of ways. As such, there is a clear separation of content and presentation,
+and this API enforces that.</p>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="NotifyActionCallback"></a><h3>NotifyActionCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*NotifyActionCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                         <em class="parameter"><code><span class="type">char</span> *action</code></em>,
+                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>An action callback function.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NOTIFY-ACTION-CALLBACK:CAPS"></a><h3>NOTIFY_ACTION_CALLBACK()</h3>
+<pre class="programlisting">#define NOTIFY_ACTION_CALLBACK(func) ((NotifyActionCallback)(func))
+</pre>
+<p>A convenience macro for casting a function to a <a class="link" href="NotifyNotification.html#NotifyActionCallback" title="NotifyActionCallback ()"><span class="type">NotifyActionCallback</span></a>. This
+is much like <a href="../gobject/gobject-Closures.html#G-CALLBACK:CAPS"><code class="function">G_CALLBACK()</code></a>.</p>
+<div class="refsect3">
+<a name="NOTIFY-ACTION-CALLBACK.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>The function to cast.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-new"></a><h3>notify_notification_new ()</h3>
+<pre class="programlisting"><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="returnvalue">NotifyNotification</span></a> *
+notify_notification_new (<em class="parameter"><code>const <span class="type">char</span> *summary</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *body</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *icon</code></em>);</pre>
+<p>Creates a new <a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a>. The summary text is required, but
+all other parameters are optional.</p>
+<div class="refsect3">
+<a name="notify-notification-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>summary</p></td>
+<td class="parameter_description"><p>The required summary text.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>The optional body text. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>icon</p></td>
+<td class="parameter_description"><p>The optional icon theme icon name or filename. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-notification-new.returns"></a><h4>Returns</h4>
+<p> The new <a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-update"></a><h3>notify_notification_update ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_notification_update (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *summary</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *body</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *icon</code></em>);</pre>
+<p>Updates the notification text and icon. This won't send the update out
+and display it on the screen. For that, you will need to call
+<a class="link" href="NotifyNotification.html#notify-notification-show" title="notify_notification_show ()"><code class="function">notify_notification_show()</code></a>.</p>
+<div class="refsect3">
+<a name="notify-notification-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification to update.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>summary</p></td>
+<td class="parameter_description"><p>The new required summary text.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>The optional body text. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>icon</p></td>
+<td class="parameter_description"><p>The optional icon theme icon name or filename. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-notification-update.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, unless an invalid parameter was passed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-show"></a><h3>notify_notification_show ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_notification_show (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Tells the notification server to display the notification on the screen.</p>
+<div class="refsect3">
+<a name="notify-notification-show.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The returned error information.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-notification-show.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful. On error, this will return <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and set
+<em class="parameter"><code>error</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-app-name"></a><h3>notify_notification_set_app_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_app_name (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *app_name</code></em>);</pre>
+<p>Sets the application name for the notification. If this function is
+not called or if <em class="parameter"><code>app_name</code></em>
+ is <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the application name will be
+set from the value used in <a class="link" href="libnotify-notify.html#notify-init" title="notify_init ()"><code class="function">notify_init()</code></a> or overridden with
+<a class="link" href="libnotify-notify.html#notify-set-app-name" title="notify_set_app_name ()"><code class="function">notify_set_app_name()</code></a>.</p>
+<div class="refsect3">
+<a name="notify-notification-set-app-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>app_name</p></td>
+<td class="parameter_description"><p>the localised application name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.7.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-timeout"></a><h3>notify_notification_set_timeout ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_timeout (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout</code></em>);</pre>
+<p>Sets the timeout of the notification. To set the default time, pass
+<a class="link" href="NotifyNotification.html#NOTIFY-EXPIRES-DEFAULT:CAPS" title="NOTIFY_EXPIRES_DEFAULT"><code class="literal">NOTIFY_EXPIRES_DEFAULT</code></a> as <em class="parameter"><code>timeout</code></em>
+. To set the notification to never
+expire, pass <a class="link" href="NotifyNotification.html#NOTIFY-EXPIRES-NEVER:CAPS" title="NOTIFY_EXPIRES_NEVER"><code class="literal">NOTIFY_EXPIRES_NEVER</code></a>.</p>
+<p>Note that the timeout may be ignored by the server.</p>
+<div class="refsect3">
+<a name="notify-notification-set-timeout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timeout</p></td>
+<td class="parameter_description"><p>The timeout in milliseconds.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-category"></a><h3>notify_notification_set_category ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_category (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *category</code></em>);</pre>
+<p>Sets the category of this notification. This can be used by the
+notification server to filter or display the data in a certain way.</p>
+<div class="refsect3">
+<a name="notify-notification-set-category.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>category</p></td>
+<td class="parameter_description"><p>The category.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-urgency"></a><h3>notify_notification_set_urgency ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_urgency (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                 <em class="parameter"><code><a class="link" href="NotifyNotification.html#NotifyUrgency" title="enum NotifyUrgency"><span class="type">NotifyUrgency</span></a> urgency</code></em>);</pre>
+<p>Sets the urgency level of this notification.</p>
+<p>See: <a class="link" href="NotifyNotification.html#NotifyUrgency" title="enum NotifyUrgency"><span class="type">NotifyUrgency</span></a></p>
+<div class="refsect3">
+<a name="notify-notification-set-urgency.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>urgency</p></td>
+<td class="parameter_description"><p>The urgency level.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-icon-from-pixbuf"></a><h3>notify_notification_set_icon_from_pixbuf ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_icon_from_pixbuf
+                               (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                <em class="parameter"><code><a href="../gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> *icon</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_icon_from_pixbuf</code> is deprecated and should not be used in newly-written code.</p>
+<p>use <a class="link" href="NotifyNotification.html#notify-notification-set-image-from-pixbuf" title="notify_notification_set_image_from_pixbuf ()"><code class="function">notify_notification_set_image_from_pixbuf()</code></a> instead.</p>
+</div>
+<p>Sets the icon in the notification from a <a href="../gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a>.</p>
+<div class="refsect3">
+<a name="notify-notification-set-icon-from-pixbuf.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>icon</p></td>
+<td class="parameter_description"><p>The icon.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-image-from-pixbuf"></a><h3>notify_notification_set_image_from_pixbuf ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_image_from_pixbuf
+                               (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                <em class="parameter"><code><a href="../gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> *pixbuf</code></em>);</pre>
+<p>Sets the image in the notification from a <a href="../gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a>.</p>
+<div class="refsect3">
+<a name="notify-notification-set-image-from-pixbuf.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pixbuf</p></td>
+<td class="parameter_description"><p>The image.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint"></a><h3>notify_notification_set_hint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                              <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                              <em class="parameter"><code><a href="../glib/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
+<p>Sets a hint for <em class="parameter"><code>key</code></em>
+ with value <em class="parameter"><code>value</code></em>
+. If <em class="parameter"><code>value</code></em>
+ is <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+a previously set hint for <em class="parameter"><code>key</code></em>
+ is unset.</p>
+<p>If <em class="parameter"><code>value</code></em>
+ is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>the hint key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the hint value, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset the hint. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-int32"></a><h3>notify_notification_set_hint_int32 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_int32 (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                    <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_int32</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with a 32-bit integer value.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-int32.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-uint32"></a><h3>notify_notification_set_hint_uint32 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_uint32 (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                     <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> value</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_uint32</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with an unsigned 32-bit integer value.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-uint32.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-double"></a><h3>notify_notification_set_hint_double ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_double (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                     <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_double</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with a double value.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-double.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-string"></a><h3>notify_notification_set_hint_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_string (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_string</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with a string value.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-byte"></a><h3>notify_notification_set_hint_byte ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_byte (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                   <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> value</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_byte</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with a byte value.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-byte.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-set-hint-byte-array"></a><h3>notify_notification_set_hint_byte_array ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_set_hint_byte_array
+                               (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *value</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> len</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">notify_notification_set_hint_byte_array</code> has been deprecated since version 0.6. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="NotifyNotification.html#notify-notification-set-hint" title="notify_notification_set_hint ()"><code class="function">notify_notification_set_hint()</code></a> instead</p>
+</div>
+<p>Sets a hint with a byte array value. The length of <em class="parameter"><code>value</code></em>
+ must be passed
+as <em class="parameter"><code>len</code></em>
+.</p>
+<div class="refsect3">
+<a name="notify-notification-set-hint-byte-array.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The hint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The hint's value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=len]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>The length of the byte array.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-clear-hints"></a><h3>notify_notification_clear_hints ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_clear_hints (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>);</pre>
+<p>Clears all hints from the notification.</p>
+<div class="refsect3">
+<a name="notify-notification-clear-hints.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-add-action"></a><h3>notify_notification_add_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_add_action (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *label</code></em>,
+                                <em class="parameter"><code><a class="link" href="NotifyNotification.html#NotifyActionCallback" title="NotifyActionCallback ()"><span class="type">NotifyActionCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Miscellaneous-Utility-Functions.html#GFreeFunc"><span class="type">GFreeFunc</span></a> free_func</code></em>);</pre>
+<p>Adds an action to a notification. When the action is invoked, the
+specified callback function will be called, along with the value passed
+to <em class="parameter"><code>user_data</code></em>
+.</p>
+<div class="refsect3">
+<a name="notify-notification-add-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>The action ID.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>label</p></td>
+<td class="parameter_description"><p>The human-readable action label.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>The action's callback function.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>Optional custom data to pass to <em class="parameter"><code>callback</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>free_func</p></td>
+<td class="parameter_description"><p>An optional function to free <em class="parameter"><code>user_data</code></em>
+when the notification
+is destroyed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GLib.DestroyNotify]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-clear-actions"></a><h3>notify_notification_clear_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_notification_clear_actions (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>);</pre>
+<p>Clears all actions from the notification.</p>
+<div class="refsect3">
+<a name="notify-notification-clear-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-close"></a><h3>notify_notification_close ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_notification_close (<em class="parameter"><code><a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>,
+                           <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously tells the notification server to hide the notification on the screen.</p>
+<div class="refsect3">
+<a name="notify-notification-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The returned error information.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-notification-close.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, or <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error with <em class="parameter"><code>error</code></em>
+filled in</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-notification-get-closed-reason"></a><h3>notify_notification_get_closed_reason ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+notify_notification_get_closed_reason (<em class="parameter"><code>const <a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification</code></em>);</pre>
+<p>Returns the closed reason code for the notification. This is valid only
+after the "closed" signal is emitted.</p>
+<div class="refsect3">
+<a name="notify-notification-get-closed-reason.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The notification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-notification-get-closed-reason.returns"></a><h4>Returns</h4>
+<p> The closed reason code.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NOTIFY-EXPIRES-DEFAULT:CAPS"></a><h3>NOTIFY_EXPIRES_DEFAULT</h3>
+<pre class="programlisting">#define NOTIFY_EXPIRES_DEFAULT -1
+</pre>
+<p>The default expiration time on a notification.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NOTIFY-EXPIRES-NEVER:CAPS"></a><h3>NOTIFY_EXPIRES_NEVER</h3>
+<pre class="programlisting">#define NOTIFY_EXPIRES_NEVER    0
+</pre>
+<p>The notification never expires. It stays open until closed by the calling API
+or the user.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification-struct"></a><h3>struct NotifyNotification</h3>
+<pre class="programlisting">struct NotifyNotification;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyUrgency"></a><h3>enum NotifyUrgency</h3>
+<p>The urgency level of the notification.</p>
+<div class="refsect3">
+<a name="NotifyUrgency.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NOTIFY-URGENCY-LOW:CAPS"></a>NOTIFY_URGENCY_LOW</p></td>
+<td class="enum_member_description">
+<p>Low urgency. Used for unimportant notifications.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NOTIFY-URGENCY-NORMAL:CAPS"></a>NOTIFY_URGENCY_NORMAL</p></td>
+<td class="enum_member_description">
+<p>Normal urgency. Used for most standard notifications.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NOTIFY-URGENCY-CRITICAL:CAPS"></a>NOTIFY_URGENCY_CRITICAL</p></td>
+<td class="enum_member_description">
+<p>Critical urgency. Used for very important notifications.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NotifyNotification--app-name"></a><h3>The <code class="literal">“app-name”</code> property</h3>
+<pre class="programlisting">  “app-name”                 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The application name to use for this notification.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification--body"></a><h3>The <code class="literal">“body”</code> property</h3>
+<pre class="programlisting">  “body”                     <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The message body text.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification--closed-reason"></a><h3>The <code class="literal">“closed-reason”</code> property</h3>
+<pre class="programlisting">  “closed-reason”            <a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>The reason code for why the notification was closed.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification--icon-name"></a><h3>The <code class="literal">“icon-name”</code> property</h3>
+<pre class="programlisting">  “icon-name”                <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The icon filename or icon theme-compliant name.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>The notification ID.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NotifyNotification--summary"></a><h3>The <code class="literal">“summary”</code> property</h3>
+<pre class="programlisting">  “summary”                  <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The summary text.</p>
+<p>Owner: NotifyNotification</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NotifyNotification.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="NotifyNotification-closed"></a><h3>The <code class="literal">“closed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NotifyNotification.html" title="NotifyNotification"><span class="type">NotifyNotification</span></a> *notification,
+               <a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)</pre>
+<p>Emitted when the notification is closed.</p>
+<div class="refsect3">
+<a name="NotifyNotification-closed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>notification</p></td>
+<td class="parameter_description"><p>The object which received the signal.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="../gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void say_hello(const char *name)
+void sayHello(const char *name)
 {
   printf("Hello %s!\n", name);
 }
