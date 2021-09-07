@@ -3,9 +3,9 @@ class Transform::Notification
 
   getter summary : String
   getter body : String
-  getter icon : String?
+  getter icon : String
 
-  def initialize(@summary : String, @body : String, @icon : String? = nil)
+  def initialize(@summary : String, @body : String, @icon : String = "")
     @notification = LibNotify.notify_notification_new @summary, @body, @icon
   end
 

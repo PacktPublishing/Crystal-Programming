@@ -16,9 +16,9 @@ end
 
 begin
   if multi_file_mode
-    processor.process_multiple
+    processor.process_multiple ARGV.shift, ARGV, STDERR
   else
-    processor.process
+    processor.process ARGV, STDIN, STDOUT, STDERR
   end
 rescue ex : RuntimeError
   exit 1

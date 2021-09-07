@@ -1,7 +1,7 @@
 class Transform::NotificationEmitter
   @@initialized : Bool = false
 
-  at_exit { LibNotify.notify_uninit }
+  at_exit { LibNotify.notify_uninit if @@initialized }
 
   def emit(summary : String, body : String) : Nil
     self.emit Transform::Notification.new summary, body

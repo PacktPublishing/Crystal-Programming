@@ -1,5 +1,5 @@
 class Transform::Processor
-  def process(input_args : Array(String) = ARGV, input : IO = ARGF, output : IO = STDOUT, error : IO = STDERR) : Nil
+  def process(input_args : Array(String), input : IO, output : IO, error : IO) : Nil
     filter = input_args.shift
 
     input_buffer = IO::Memory.new
@@ -22,13 +22,11 @@ class Transform::Processor
     Transform::YAML.serialize output_buffer, output
   end
 
-  def process_multiple(input_args : Array(String) = ARGV, input : IO = ARGF, output : IO = STDOUT, error : IO = STDERR) : Nil
-    filter = input_args.shift
-
-    input_args.each do |file|
+  def process_multiple(filter : String, input_files : Array(String), error : IO) : Nil
+    input_files.each do |file|
       File.open(file, "r") do |input_file|
         File.open("#{input_file.path}.transformed", "w") do |output_file|
-          self.process [filter], input_file, output_file
+          self.process [filter], input_file, output_file, error
         end
       end
     end

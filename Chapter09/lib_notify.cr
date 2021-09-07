@@ -4,11 +4,12 @@ lib LibNotify
   alias GBool = GInt
   alias GChar = LibC::Char
 
-  struct NotifyNotification
-    summary : GChar*
-    body : GChar*
-    icon : GChar*
+  struct InternalNotifyNotification
+    parent_object : Void*
+    priv : Void*
   end
+
+  type NotifyNotification = InternalNotifyNotification
 
   fun notify_init(app_name : LibC::Char*) : GBool
   fun notify_uninit : Void
