@@ -1,20 +1,16 @@
-macro def_macros(*numbers)
-  {% for num, idx in numbers %}
-    macro def_num_{{idx}}_methods(n)
-      def num_\{{n}}
-        \{{n}}
-      end
-      
-      def num_\{{n}}_index
-        {{idx}}
-      end
-    end
+{% begin %}
+  {% hash = {"foo" => "bar", "biz" => "baz"} %}
 
-    def_num_{{idx}}_methods({{num}})
+  {% for key, value in hash %}
+    puts "#{{{key}}}=#{{{value}}}"
   {% end %}
-end
+{% end %}
 
-def_macros 2, 1
+{% begin %}
+  {% arr = [1, 2, 3] %}
+  {% hash = {} of Nil => Nil %}
 
-pp num_1_index # => 1
-pp num_2_index # => 0
+  {% arr.each { |v| hash[v] = v * 2 } %}
+
+  puts({{hash}})
+{% end %}

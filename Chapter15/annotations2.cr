@@ -1,8 +1,6 @@
-annotation MyClass
-end
-
-annotation MyMethod
-end
+annotation MyClass; end
+annotation MyMethod; end
+annotation MyAnnotation; end
 
 @[MyClass(true, id: "foo_class")]
 class Foo
@@ -10,7 +8,13 @@ class Foo
     {% ann = @type.annotation MyClass %}
     {% pp "#{@type} has positional arguments of: #{ann.args}" %}
     {% pp "and named arguments of #{ann.named_args}" %}
-    {% pp %(and is #{ann[0] ? "active".id : "not active".id}) %}
+    {% pp %(and is #{ann[0] ? "active".id : "not active".id}.) %}
+    {% status = if my_ann = @type.annotation MyAnnotation
+                  "DOES"
+                else
+                  "DOES NOT"
+                end %}
+    {% pp "#{@type} #{status.id} have MyAnnotation applied." %}
   {% end %}
 end
 

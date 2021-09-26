@@ -1,16 +1,21 @@
 macro def_macros(*numbers)
   {% for num, idx in numbers %}
     macro def_num_{{idx}}_methods(n)
-      def num_\{{n}}
-        \{{n}}
-      end
-      
-      def num_\{{n}}_index
-        {{idx}}
-      end
+      \{% idx = {{idx}} %}
+
+      {% verbatim do %}
+        def num_{{n}}
+          {{n}}
+        end
+        
+        def num_{{n}}_index
+          {{idx}}
+        end
+      {% end %}
     end
 
     def_num_{{idx}}_methods({{num}})
+    {{debug}}
   {% end %}
 end
 
