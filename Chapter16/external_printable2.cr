@@ -54,8 +54,24 @@ class MyClass
   property created_at : Time = Time.utc
 end
 
-metadata = MyClass.print_metadata
-
 my_class = MyClass.new
 
-pp metadata.printable_properties["name"].value my_class
+class Printer
+  def print(obj : Printable)
+    string = String.build do |io|
+      obj.class.print_metadata.printable_properties.each_value do |prop|
+        prop.value(obj).to_s io
+
+        io.puts
+      end
+    end
+
+    puts string
+  end
+
+  def print(obj)
+    puts obj
+  end
+end
+
+Printer.new.print my_class
