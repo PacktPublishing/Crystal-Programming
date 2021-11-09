@@ -1,0 +1,33 @@
+name: transform
+
+version: 0.1.0
+
+authors:
+  - George Dietrich <george@dietrich.app>
+
+crystal: 1.0.0
+
+license: MIT
+
+targets:
+  transform:
+    main: src/transform_cli.cr
+
+dependencies:
+  shard1:
+    github: owner/shard1
+    version: ~> 1.1.0
+  shard2:
+    github: owner/shard2
+    commit: 6471b2b43ada4c41659ae8cfe1543929b3fdb64c 
+
+development_dependencies:
+  shard3:
+    github: dev-user/shard3
+    version: ‘>= 0.14.0’
+
+scripts:
+  postinstall: shards build 
+
+executables:
+  - name_of_binary
