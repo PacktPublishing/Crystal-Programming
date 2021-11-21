@@ -1,53 +1,47 @@
-annotation Print; end
-
-record PrintData(IvarType, ClassType),
-  name : String,
-  value : IvarType,
-  format : String = "%F",
-  scale : Int32 = 2 do
-  def type : IvarType.class
-    IvarType
-  end
-
-  def class : ClassType.class
-    ClassType
-  end
+annotation Print
 end
 
 module Printable
-  def printable_properties
-    {{
-      @type.instance_vars.select(&.annotation Print).map do |ivar|
-        "PrintData(#{ivar.type}, #{@type}).new(
-           name: #{ivar.name.stringify},
-           value: @#{ivar.name.id},
-           #{ivar.annotation(Print).named_args.double_splat}
-        )".id
-      end
-    }}
+  def print(printer)
+    printer.start
+    {% for ivar in @type.instance_vars.select(&.annotation Print) %}
+      printer.ivar({{ivar.name.stringify}}, @{{ivar.name.id}}, {{ivar.annotation(Print).named_args.double_splat}})
+    {% end %}
+    printer.finish
+  end
+
+  def print(io : IO = STDOUT)
+    print IOPrinter.new(io)
   end
 end
 
-class Printer
-  def print(obj : Printable)
-    string = String.build do |io|
-      obj.printable_properties.each do |prop|
-        case value = prop.value
-        when Time  then value.to_s(io, prop.format)
-        when Float then value.format(io, decimal_places: prop.scale)
-        else
-          value.to_s io
-        end
+struct IOPrinter
+  def initialize(@io : IO); end
 
-        io.puts
-      end
-    end
-
-    puts string
+  def start
+    @io.puts "---"
   end
 
-  def print(obj)
-    puts obj
+  def finish
+    @io.puts "---"
+    @io.puts
+  end
+
+  def ivar(name : String, value : String)
+    @io << name << ": " << value
+    @io.puts
+  end
+
+  def ivar(name : String, value : Float32, *, scale : Int32 = 3)
+    @io << name << ": "
+    value.format(@io, decimal_places: scale)
+    @io.puts
+  end
+
+  def ivar(name : String, value : Time, *, format : String = "%Y-%m-%d %H:%M:%S %:z")
+    @io << name << ": "
+    value.to_s(@io, format)
+    @io.puts
   end
 end
 
@@ -57,19 +51,16 @@ class MyClass
   @[Print]
   property name : String = "Jim"
 
-  @[Print(format: "%F %T")]
+  @[Print(format: "%F")]
   property created_at : Time = Time.utc
+
+  @[Print(scale: 1)]
+  property weight : Float32 = 56.789
 end
 
-class NonPrintableClass
-  property name : String = "Jim"
-  property created_at : Time = Time.utc
-end
-
-my_class = MyClass.new
-non_printable_class = NonPrintableClass.new
-
-printer = Printer.new
-
-printer.print my_class
-printer.print non_printable_class
+MyClass.new.print
+# ---
+# name: Jim
+# created_at: 2021-11-16
+# weight: 56.8
+# ---

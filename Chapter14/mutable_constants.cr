@@ -1,46 +1,35 @@
-record Metadata(IvarType, ClassType),
-  name : String do
-  def class : ClassType.class
-    ClassType
-  end
+MODELS = [] of ModelBase.class
 
-  def type : IvarType.class
-    IvarType
-  end
+macro register_model(type)
+  {% MODELS << type.resolve %}
 end
 
-EXCLUDED_TYPES = [] of Nil
-
-macro exclude_type(type)
-  {% type.raise %(Expected argument to `exclude_type` to be `Path`, got `#{type.class_name.id}`.) unless type.is_a? Path %}
-  {% EXCLUDED_TYPES << type.resolve %}
+abstract class ModelBase
 end
 
-module ExposableMetadata
-  def metadata
-    {% begin %}
-      {% types = [] of Nil %}
+class Cat < ModelBase
+end
 
-      {% for ivar in @type.instance_vars %}
-        {% unless EXCLUDED_TYPES.any? &.<=(ivar.type) %}
-          {% types << "Metadata(#{ivar.type}, #{@type}).new(#{ivar.name.stringify})".id %}
-        {% end %}
-      {% end %}
+class Dog < ModelBase
+end
 
-      {{types}}
+def model_by_name(name)
+  {% begin %}
+    case name
+    {% for model in MODELS %}
+      when {{model.name.stringify}} then {{model}}
     {% end %}
-  end
+    else
+      raise "model unknown"
+    end
+  {% end %}
 end
 
-class MyClass
-  include ExposableMetadata
+pp {{ MODELS }}
+pp model_by_name "Cat"
 
-  property name : String = "Jim"
-  property created_at : Time = Time.utc
-end
+register_model Cat
+register_model Dog
 
-exclude_type "Time"
-
-my_class = MyClass.new
-
-pp my_class.metadata
+pp {{ MODELS }}
+pp model_by_name "Cat"
