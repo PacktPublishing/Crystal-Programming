@@ -1,15 +1,13 @@
+require "./notification"
+require "./notification_emitter"
+
 @[Link("libnotify")]
 lib LibNotify
   alias GInt = LibC::Int
   alias GBool = GInt
   alias GChar = LibC::Char
 
-  struct InternalNotifyNotification
-    parent_object : Void*
-    priv : Void*
-  end
-
-  type NotifyNotification = InternalNotifyNotification
+  type NotifyNotification = Void*
 
   fun notify_init(app_name : LibC::Char*) : GBool
   fun notify_uninit : Void

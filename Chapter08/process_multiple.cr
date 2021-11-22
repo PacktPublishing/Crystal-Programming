@@ -1,9 +1,7 @@
-def process_multiple(input_args : Array(String), input : IO, output : IO, error : IO) : Nil
-  filter = input_args.shift
-
+def process_multiple(filter : String, input_files : Array(String), error : IO) : Nil
   channel = Channel(Bool | Exception).new
 
-  input_args.each do |file|
+  input_files.each do |file|
     spawn do
       File.open(file, "r") do |input_file|
         File.open("#{input_file.path}.transformed", "w") do |output_file|
@@ -17,7 +15,7 @@ def process_multiple(input_args : Array(String), input : IO, output : IO, error 
     end
   end
 
-  input_args.size.times do
+  input_files.size.times do
     case v = channel.receive
     in Exception then raise v
     in Bool

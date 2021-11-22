@@ -1,3 +1,5 @@
+require "./lib_notify"
+
 class Transform::Notification
   @notification : LibNotify::NotifyNotification*
 

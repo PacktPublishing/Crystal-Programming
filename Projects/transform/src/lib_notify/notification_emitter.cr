@@ -1,3 +1,6 @@
+require "./lib_notify"
+require "./notification"
+
 class Transform::NotificationEmitter
   @@initialized : Bool = false
 

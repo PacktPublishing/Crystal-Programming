@@ -1,6 +1,5 @@
 require "./lib_notify"
-require "./notification"
-require "./notification_emitter"
+
 require "./processor"
 require "./yaml"
 
