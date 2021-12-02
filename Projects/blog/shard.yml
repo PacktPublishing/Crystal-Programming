@@ -1,0 +1,23 @@
+name: blog
+version: 0.1.0
+
+authors:
+  - George Dietrich <george@dietrich.app>
+
+dependencies:
+  athena:
+    path: /home/george/dev/git/athena-framework/athena
+  jwt:
+    github: crystal-community/jwt
+    version: ~> 1.6.0
+  pg:
+    github: will/crystal-pg
+    version: ~> 0.24.0
+
+targets:
+  blog:
+    main: src/blog.cr
+
+crystal: 1.2.2
+
+license: MIT
