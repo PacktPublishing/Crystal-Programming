@@ -25,13 +25,13 @@ class Blog::EventListeners::SecurityListener
     token = auth_header.lchop "Bearer "
 
     begin
-      body = JWT.decode token, ENV["SECRET"], :hs512
+      body, _ = JWT.decode token, ENV["SECRET"], :hs512
     rescue decode_error : JWT::DecodeError
       raise ATH::Exceptions::Unauthorized.new "Invalid token", "Bearer realm=\"My Blog\""
     end
 
     @user_storage.user = @entity_manager
       .repository(Blog::Entities::User)
-      .find body[0]["user_id"].as_i64
+      .find body["user_id"].as_i64
   end
 end

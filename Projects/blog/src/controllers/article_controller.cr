@@ -16,6 +16,10 @@ class Blog::Controllers::ArticleController < ATH::Controller
   @[ATHA::Put("/article")]
   @[ATHA::ParamConverter("article", converter: ATH::RequestBodyConverter)]
   def update_article(article : Blog::Entities::Article) : Blog::Entities::Article
+    if article.author_id != @user_storage.user.id
+      raise ATH::Exceptions::Forbidden.new "Cannot edit someone else's article."
+    end
+
     @entity_manager.persist article
     article
   end
@@ -29,6 +33,10 @@ class Blog::Controllers::ArticleController < ATH::Controller
   @[ATHA::Delete("/article/:id")]
   @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
   def delete_article(article : Blog::Entities::Article) : Nil
+    if article.author_id != @user_storage.user.id
+      raise ATH::Exceptions::Forbidden.new "Cannot delete someone else's article."
+    end
+
     @entity_manager.remove article
   end
 
