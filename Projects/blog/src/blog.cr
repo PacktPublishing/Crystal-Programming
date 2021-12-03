@@ -1,3 +1,4 @@
+require "crypto/bcrypt/password"
 require "json"
 
 require "athena"
@@ -5,8 +6,9 @@ require "jwt"
 require "pg"
 
 require "./controllers/*"
+require "./entities/*"
 require "./event_listeners/*"
-require "./models/*"
+require "./services/*"
 
 module Blog
   VERSION = "0.1.0"

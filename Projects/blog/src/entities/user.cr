@@ -1,4 +1,4 @@
-class Blog::Models::User
+class Blog::Entities::User
   include DB::Serializable
   include AVD::Validatable
   include JSON::Serializable
@@ -16,19 +16,25 @@ class Blog::Models::User
   property email : String
 
   @[Assert::Size(8..25, min_message: "Your password is too short", max_message: "Your password is too long")]
+  @[JSON::Field(ignore_serialize: true)]
   property password : String
 
   getter! created_at : Time
   getter! updated_at : Time
 
   getter deleted_at : Time?
+
+  protected def after_save(@id : Int64) : Nil; end
+
+  protected def before_save : Nil
+    if @id.nil?
+      @created_at = Time.utc
+      @password = Crypto::Bcrypt::Password.create(@password).to_s
+    end
+
+    @updated_at = Time.utc
+  end
 end
-# before_save :hash_password
-# def hash_password : Nil
-#   if p = @password
-#     @password = Crypto::Bcrypt::Password.create(p).to_s
-#   end
-# end
 
 # def generate_jwt : String
 #   JWT.encode({

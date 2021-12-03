@@ -2,6 +2,11 @@
 class Blog::EventListeners::SecurityListener
   include AED::EventListenerInterface
 
+  def initialize(
+    @user_storage : Blog::Services::UserStorage,
+    @entity_manager : Blog::Services::EntityManager
+  ); end
+
   def self.subscribed_events : AED::SubscribedEvents
     AED::SubscribedEvents{
       ATH::Events::Request => 10,
@@ -9,7 +14,7 @@ class Blog::EventListeners::SecurityListener
   end
 
   def call(event : ATH::Events::Request, _dispatcher : AED::EventDispatcherInterface) : Nil
-    if "POST" == event.request.method && event.request.path.in? "/user", "/login"
+    if "POST" == event.request.method && event.request.path.in? "/register", "/login"
       return
     end
 
@@ -24,5 +29,9 @@ class Blog::EventListeners::SecurityListener
     rescue decode_error : JWT::DecodeError
       raise ATH::Exceptions::Unauthorized.new "Invalid token", "Bearer realm=\"My Blog\""
     end
+
+    @user_storage.user = @entity_manager
+      .repository(Blog::Entities::User)
+      .find body[0]["user_id"].as_i64
   end
 end
