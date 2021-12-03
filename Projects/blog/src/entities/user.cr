@@ -34,15 +34,8 @@ class Blog::Entities::User
 
     @updated_at = Time.utc
   end
-end
 
-# def generate_jwt : String
-#   JWT.encode({
-#     "user_id" => @id,
-#     "exp"     => (Time.utc + 1.week).to_unix,
-#     "iat"     => Time.utc.to_unix,
-#   },
-#     ENV["SECRET"],
-#     :hs512
-#   )
-# end
+  protected def on_remove : Nil
+    @deleted_at = Time.utc
+  end
+end

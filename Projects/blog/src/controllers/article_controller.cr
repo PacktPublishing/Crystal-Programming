@@ -13,11 +13,23 @@ class Blog::Controllers::ArticleController < ATH::Controller
     article
   end
 
+  @[ATHA::Put("/article")]
+  @[ATHA::ParamConverter("article", converter: ATH::RequestBodyConverter)]
+  def update_article(article : Blog::Entities::Article) : Blog::Entities::Article
+    @entity_manager.persist article
+    article
+  end
+
   @[ATHA::Get("/article/:id")]
-  def article(id : Int64) : Blog::Entities::Article
-    @entity_manager.repository(Blog::Entities::Article).find id
-  rescue ex : DB::NoResultsError
-    raise ATH::Exceptions::NotFound.new "An item with the provided ID could not be found.", cause: ex
+  @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
+  def article(article : Blog::Entities::Article) : Blog::Entities::Article
+    article
+  end
+
+  @[ATHA::Delete("/article/:id")]
+  @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
+  def delete_article(article : Blog::Entities::Article) : Nil
+    @entity_manager.remove article
   end
 
   @[ATHA::Get("/article")]

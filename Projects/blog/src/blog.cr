@@ -8,6 +8,7 @@ require "pg"
 require "./controllers/*"
 require "./entities/*"
 require "./event_listeners/*"
+require "./param_converters/*"
 require "./services/*"
 
 module Blog
