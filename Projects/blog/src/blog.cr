@@ -4,6 +4,9 @@ require "json"
 require "athena"
 require "jwt"
 require "pg"
+require "crinja"
+
+require "./config"
 
 require "./controllers/*"
 require "./entities/*"

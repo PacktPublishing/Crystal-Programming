@@ -13,6 +13,9 @@ dependencies:
   pg:
     github: will/crystal-pg
     version: ~> 0.24.0
+  crinja:
+    github: straight-shoota/crinja
+    version: ~> 0.8.0
 
 targets:
   blog:

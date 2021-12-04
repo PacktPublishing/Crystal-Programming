@@ -26,6 +26,7 @@ class Blog::Controllers::ArticleController < ATH::Controller
 
   @[ATHA::Get("/article/:id")]
   @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
+  @[Blog::Annotations::Template("article.html.j2")]
   def article(article : Blog::Entities::Article) : Blog::Entities::Article
     article
   end

@@ -1,7 +1,9 @@
+@[Crinja::Attributes]
 class Blog::Entities::Article
   include DB::Serializable
   include ASR::Serializable
   include AVD::Validatable
+  include Crinja::Object::Auto
 
   def initialize(@title : String, @body : String); end
 

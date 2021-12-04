@@ -36,6 +36,10 @@ shards:
     git: https://github.com/spider-gazelle/bindata.git
     version: 1.9.1
 
+  crinja:
+    git: https://github.com/straight-shoota/crinja.git
+    version: 0.8.0
+
   db:
     git: https://github.com/crystal-lang/crystal-db.git
     version: 0.10.1
