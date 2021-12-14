@@ -15,9 +15,6 @@ class Baz; end
 
 module Asdf; end
 
-{% for type in Object.all_subclasses.select do |t|
-                 (ann = t.annotation(MyAnnotation)) &&
-                   (ann[:id] == nil || ann[:id] % 2 == 0)
-               end %}
+{% for type in Object.all_subclasses.select { |t| (ann = t.annotation(MyAnnotation)) && (ann[:id] == nil || ann[:id] % 2 == 0) } %}
   {{pp type}}
 {% end %}

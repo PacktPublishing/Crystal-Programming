@@ -12,6 +12,6 @@ FROM alpine:latest
 
 WORKDIR /
 
-COPY --from=builder /app/bin/oq .
+COPY --from=builder /app/bin/main .
 
-ENTRYPOINT ["/oq"]
+ENTRYPOINT ["/main"]

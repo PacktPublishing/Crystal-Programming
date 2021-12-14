@@ -12,7 +12,7 @@ class HTMLFormatHandler
     end
 
     unless (data = view.data).is_a? Crinja::Object
-      raise ATH::Exceptions::NotAcceptable.new "Cannot convert value of type '#{view.data.class}' to '#{format}'."
+      raise "Cannot convert value of type '#{view.data.class}' to '#{format}'."
     end
 
     content = CRINJA.get_template(template_ann.name).render({data: view.data})

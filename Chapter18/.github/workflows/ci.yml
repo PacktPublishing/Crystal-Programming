@@ -10,18 +10,18 @@ on:
 jobs:
   check_format:
     runs-on: ubuntu-latest
-    container:
-      image: crystallang/crystal:latest-alpine
     steps:
       - uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
       - name: Check Format
         run: crystal tool format --check
   coding_standards:
     runs-on: ubuntu-latest
-    container:
-      image: crystallang/crystal:latest-alpine
     steps:
       - uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
       - name: Install Dependencies
         run: shards install
       - name: Ameba
