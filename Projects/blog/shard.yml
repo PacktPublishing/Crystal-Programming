@@ -6,7 +6,8 @@ authors:
 
 dependencies:
   athena:
-    path: /home/george/dev/git/athena-framework/athena
+    github: athena-framework/framework
+    version: ~> 0.15.0
   jwt:
     github: crystal-community/jwt
     version: ~> 1.6.0
@@ -16,6 +17,11 @@ dependencies:
   crinja:
     github: straight-shoota/crinja
     version: ~> 0.8.0
+
+development_dependencies:
+  athena-spec:
+    github: athena-framework/spec
+    version: ~> 0.2.3
 
 targets:
   blog:

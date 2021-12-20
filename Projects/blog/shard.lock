@@ -5,8 +5,8 @@ shards:
     version: 0.4.4
 
   athena:
-    path: /home/george/dev/git/athena-framework/athena
-    version: 0.15.0
+    git: https://github.com/athena-framework/framework.git
+    version: 0.15.1
 
   athena-config:
     git: https://github.com/athena-framework/config.git
@@ -28,9 +28,13 @@ shards:
     git: https://github.com/athena-framework/serializer.git
     version: 0.2.10
 
+  athena-spec:
+    git: https://github.com/athena-framework/spec.git
+    version: 0.2.6
+
   athena-validator:
     git: https://github.com/athena-framework/validator.git
-    version: 0.1.5
+    version: 0.1.6
 
   bindata:
     git: https://github.com/spider-gazelle/bindata.git
