@@ -2,13 +2,13 @@ annotation MyAnnotation; end
 
 abstract class Parent; end
 
-@[MyAnnotation(some_key: 456)]
+@[MyAnnotation(id: 456)]
 class Child < Parent; end
 
 @[MyAnnotation]
 class Foo; end
 
-@[MyAnnotation(some_key: 123)]
+@[MyAnnotation(id: 123)]
 class Bar; end
 
 class Baz; end
