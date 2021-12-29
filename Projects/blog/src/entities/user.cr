@@ -3,9 +3,9 @@ class Blog::Entities::User
   include AVD::Validatable
   include JSON::Serializable
 
-  getter! id : Int64
-
   def initialize(@first_name : String, @last_name : String, @email : String, @password : String); end
+
+  getter! id : Int64
 
   @[Assert::NotBlank]
   property first_name : String
