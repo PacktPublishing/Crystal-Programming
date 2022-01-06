@@ -81,16 +81,16 @@ class Car < Vehicle
   end
 end
 
-abstract class Parent
-  # Some documentation common to every *id*.
-  abstract def id : Int32
+abstract class Shape
+  # Some documentation common to every *name*.
+  abstract def name : String
 end
 
-class Child < Parent
-  # Some documentation specific to *id*'s usage within `Child`.
+class Square < Shape
+  # Some documentation specific to *name*'s usage within `Square`.
   #
   # :inherit:
-  def id : Int32
-    -1
+  def name : String
+    "square"
   end
 end
