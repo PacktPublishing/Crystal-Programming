@@ -2,7 +2,7 @@
 class Blog::Controllers::Authentication < ATH::Controller
   def initialize(@entity_manager : Blog::Services::EntityManager); end
 
-  @[ATHA::Post("/login")]
+  @[ARTA::Post("/login")]
   @[ATHA::RequestParam("username", requirements: @[Assert::NotBlank])]
   @[ATHA::RequestParam("password", requirements: @[Assert::NotBlank])]
   def login(username : String, password : String) : NamedTuple(token: String)
@@ -26,7 +26,7 @@ class Blog::Controllers::Authentication < ATH::Controller
     }
   end
 
-  @[ATHA::Post("/register")]
+  @[ARTA::Post("/register")]
   @[ATHA::ParamConverter("user", converter: ATH::RequestBodyConverter)]
   def register(user : Blog::Entities::User) : Blog::Entities::User
     @entity_manager.persist user

@@ -5,7 +5,7 @@ class Blog::Controllers::ArticleController < ATH::Controller
     @user_storage : Blog::Services::UserStorage
   ); end
 
-  @[ATHA::Post("/article")]
+  @[ARTA::Post("/article")]
   @[ATHA::ParamConverter("article", converter: ATH::RequestBodyConverter)]
   def create_article(article : Blog::Entities::Article) : Blog::Entities::Article
     article.author_id = @user_storage.user.id
@@ -13,7 +13,7 @@ class Blog::Controllers::ArticleController < ATH::Controller
     article
   end
 
-  @[ATHA::Put("/article")]
+  @[ARTA::Put("/article")]
   @[ATHA::ParamConverter("article", converter: ATH::RequestBodyConverter)]
   def update_article(article : Blog::Entities::Article) : Blog::Entities::Article
     if article.author_id != @user_storage.user.id
@@ -24,14 +24,14 @@ class Blog::Controllers::ArticleController < ATH::Controller
     article
   end
 
-  @[ATHA::Get("/article/:id")]
+  @[ARTA::Get("/article/{id}")]
   @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
   @[Blog::Annotations::Template("article.html.j2")]
   def article(article : Blog::Entities::Article) : Blog::Entities::Article
     article
   end
 
-  @[ATHA::Delete("/article/:id")]
+  @[ARTA::Delete("/article/{id}")]
   @[ATHA::ParamConverter("article", converter: Blog::Converters::Database)]
   def delete_article(article : Blog::Entities::Article) : Nil
     if article.author_id != @user_storage.user.id
@@ -41,12 +41,12 @@ class Blog::Controllers::ArticleController < ATH::Controller
     @entity_manager.remove article
   end
 
-  @[ATHA::Get("/article")]
+  @[ARTA::Get("/article")]
   def articles : Array(Blog::Entities::Article)
     @entity_manager.repository(Blog::Entities::Article).find_by_author @user_storage.user.id
   end
 
-  @[ATHA::Get("/author/:id/article")]
+  @[ARTA::Get("/author/{id}/article")]
   def articles_by_author(id : Int64) : Array(Blog::Entities::Article)
     @entity_manager.repository(Blog::Entities::Article).find_by_author id
   end

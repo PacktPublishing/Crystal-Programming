@@ -8,7 +8,7 @@ class HTMLFormatHandler
     ann_configs = request.action.annotation_configurations
 
     unless template_ann = ann_configs[Blog::Annotations::Template]?
-      raise "Unable to determine the template for the '#{request.method} #{request.action.name}' route."
+      raise "Unable to determine the template for the '#{request.attributes.get "_route"}' route."
     end
 
     unless (data = view.data).is_a? Crinja::Object
