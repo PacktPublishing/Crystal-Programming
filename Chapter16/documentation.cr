@@ -81,16 +81,11 @@ class Car < Vehicle
   end
 end
 
-abstract class Shape
-  # Some documentation common to every *name*.
-  abstract def name : String
-end
-
-class Square < Shape
-  # Some documentation specific to *name*'s usage within `Square`.
+class Truck < Vehicle
+  # Some documentation specific to *name*'s usage within `Truck`.
   #
   # :inherit:
   def name : String
-    "square"
+    "truck"
   end
 end
