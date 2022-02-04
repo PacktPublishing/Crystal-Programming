@@ -13,7 +13,7 @@ end
 class Processor
   def initialize(@transformer : TransformerInterface = ShoutTransformer.new); end
 
-  def process(value : String) : Nil
+  def process(value : String) : String
     @transformer.transform value
   end
 end
@@ -23,10 +23,10 @@ puts Processor.new.process "foo"
 class MockTransformer
   include TransformerInterface
 
-  getter transformed_value : String? = nil
+  getter transform_arg_value : String? = nil
 
   def transform(value : String) : String
-    @transformed_value = value
+    @transform_arg_value = value
   end
 end
 
@@ -37,7 +37,7 @@ describe Processor do
     it "processes" do
       transformer = MockTransformer.new
       Processor.new(transformer).process "bar"
-      transformer.transformed_value.should eq "bar"
+      transformer.transform_arg_value.should eq "bar"
     end
   end
 end

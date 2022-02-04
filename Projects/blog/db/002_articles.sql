@@ -1,4 +1,4 @@
-CREATE TABLE "articles"
+CREATE TABLE IF NOT EXISTS "articles"
 (
     "id"         BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
     "author_id"  BIGINT                              NOT NULL REFERENCES "users",

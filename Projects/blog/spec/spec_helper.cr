@@ -3,73 +3,6 @@ require "../src/blog"
 
 require "athena/spec"
 
-ASPEC.run_all
-
-class Blog::Spec::MockUserRepository
-  def find(id : Int64) : Blog::Entities::User
-    user = Blog::Entities::User.new "FIRST", "LAST", "EMAIL", "PASSWORD"
-    user.after_save id
-    user
-  end
-
-  def find_by_username?(username : String) : Blog::Entities::User?
-    Blog::Entities::User.new "FIRST", "LAST", username, "PASSWORD"
-  end
-end
-
-class Blog::Spec::MockArticleRepository
-  def find(id : Int64) : Blog::Entities::Article
-    article = Blog::Entities::Article.new "TITLE", "BODY"
-    article.after_save id
-    article.before_save
-    article
-  end
-
-  def find?(id : Int64) : Blog::Entities::Article?
-    article = Blog::Entities::Article.new "TITLE", "BODY"
-    article.after_save id
-    article.before_save
-    article
-  end
-
-  def find_by_author(user_id : Int64) : Array(Blog::Entities::Article)
-    article = Blog::Entities::Article.new "TITLE", "BODY"
-    article.before_save
-
-    [article]
-  end
-end
-
-class Blog::Spec::MockEntityManager < Blog::Services::EntityManager
-  class_setter mock_user_repository : Blog::Spec::MockUserRepository? = nil
-  class_setter mock_article_repository : Blog::Spec::MockArticleRepository? = nil
-
-  getter persisted_entities : Array(DB::Serializable) = Array(DB::Serializable).new
-  getter removed_entities : Array(DB::Serializable) = Array(DB::Serializable).new
-
-  def repository(entity_class : Blog::Entities::User.class) : Blog::Spec::MockUserRepository
-    @@mock_user_repository ||= Blog::Spec::MockUserRepository.new
-  end
-
-  def repository(entity_class : Blog::Entities::Article.class) : Blog::Spec::MockArticleRepository
-    @@mock_article_repository ||= Blog::Spec::MockArticleRepository.new
-  end
-
-  def remove(entity : DB::Serializable) : Nil
-    entity.on_remove if entity.responds_to? :on_remove
-    @removed_entities << entity
-  end
-
-  def persist(entity : DB::Serializable) : Nil
-    entity.before_save if entity.responds_to? :before_save
-    @persisted_entities << entity
-  end
-end
-
-class ADI::Spec::MockableServiceContainer
-  getter(blog_services_entity_manager) { Blog::Spec::MockEntityManager.new }
-end
-
 abstract struct Blog::Spec::AthenticatedUserTestCase < ATH::Spec::APITestCase
   DEFAULT_USER_ID = 1
 
@@ -90,3 +23,31 @@ abstract struct Blog::Spec::AthenticatedUserTestCase < ATH::Spec::APITestCase
     super
   end
 end
+
+DATABASE = DB.open ENV["DATABASE_URL"]
+
+Spec.before_suite do
+  DATABASE.exec "ALTER DATABASE \"postgres\" SET SEARCH_PATH TO \"test\";"
+
+  DATABASE.exec File.read "#{__DIR__}/../db/000_setup.sql"
+  DATABASE.exec File.read "#{__DIR__}/../db/001_users.sql"
+  DATABASE.exec File.read "#{__DIR__}/../db/002_articles.sql"
+end
+
+Spec.after_suite do
+  DATABASE.exec "ALTER DATABASE \"postgres\" SET SEARCH_PATH TO \"public\";"
+  DATABASE.close
+end
+
+Spec.around_each do |example|
+  DATABASE.exec "TRUNCATE TABLE \"articles\" RESTART IDENTITY;"
+  DATABASE.exec "TRUNCATE TABLE \"users\" RESTART IDENTITY CASCADE;"
+  DATABASE.exec <<-SQL
+    INSERT INTO "users" (id, first_name, last_name, email, password, created_at, updated_at) OVERRIDING SYSTEM VALUE
+    VALUES (#{Blog::Spec::AthenticatedUserTestCase::DEFAULT_USER_ID}, 'FIRST', 'LAST', 'EMAIL', 'PASSWORD',
+            timezone('utc', now()), timezone('utc', now()));
+  SQL
+  example.run
+end
+
+ASPEC.run_all

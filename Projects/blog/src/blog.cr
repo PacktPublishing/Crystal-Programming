@@ -21,5 +21,3 @@ module Blog
 
   module Models; end
 end
-
-ATH.run

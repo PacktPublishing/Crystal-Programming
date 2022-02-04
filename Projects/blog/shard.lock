@@ -22,7 +22,7 @@ shards:
 
   athena-routing:
     git: https://github.com/athena-framework/routing.git
-    version: 0.1.0
+    version: 0.1.1
 
   athena-serializer:
     git: https://github.com/athena-framework/serializer.git
