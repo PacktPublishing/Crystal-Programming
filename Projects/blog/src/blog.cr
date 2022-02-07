@@ -1,8 +1,6 @@
-require "crypto/bcrypt/password"
 require "json"
 
 require "athena"
-require "jwt"
 require "pg"
 require "crinja"
 
@@ -10,7 +8,6 @@ require "./config"
 
 require "./controllers/*"
 require "./entities/*"
-require "./event_listeners/*"
 require "./param_converters/*"
 require "./services/*"
 
@@ -19,5 +16,5 @@ module Blog
 
   module Controllers; end
 
-  module Models; end
+  module Entities; end
 end

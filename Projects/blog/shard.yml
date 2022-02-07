@@ -8,12 +8,9 @@ dependencies:
   athena:
     github: athena-framework/framework
     version: ~> 0.16.0
-  jwt:
-    github: crystal-community/jwt
-    version: ~> 1.6.0
   pg:
     github: will/crystal-pg
-    version: ~> 0.24.0
+    version: ~> 0.26.0
   crinja:
     github: straight-shoota/crinja
     version: ~> 0.8.0

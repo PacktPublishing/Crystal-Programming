@@ -10,6 +10,7 @@ services:
       - POSTGRES_PASSWORD=mYAw3s0meB!log
     volumes:
       - pg-data:/var/lib/postgresql/data
+      - ./db:/migrations
 
 volumes:
   pg-data:

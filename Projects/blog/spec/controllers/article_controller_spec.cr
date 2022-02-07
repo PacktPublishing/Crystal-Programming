@@ -1,10 +1,10 @@
 require "../spec_helper"
 
-struct ArticleControllerTest < Blog::Spec::AthenticatedUserTestCase
+struct ArticleControllerTest < ATH::Spec::APITestCase
   def test_get_article : Nil
     DATABASE.exec <<-SQL
-      INSERT INTO "articles" (id, author_id, title, body, created_at, updated_at) OVERRIDING SYSTEM VALUE
-      VALUES (10, #{DEFAULT_USER_ID}, 'TITLE', 'BODY', timezone('utc', now()), timezone('utc', now()));
+      INSERT INTO "articles" (id, title, body, created_at, updated_at) OVERRIDING SYSTEM VALUE
+      VALUES (10, 'TITLE', 'BODY', timezone('utc', now()), timezone('utc', now()));
     SQL
 
     response = self.get "/article/10"
@@ -18,8 +18,8 @@ struct ArticleControllerTest < Blog::Spec::AthenticatedUserTestCase
 
   def test_get_article_html : Nil
     DATABASE.exec <<-SQL
-      INSERT INTO "articles" (id, author_id, title, body, created_at, updated_at) OVERRIDING SYSTEM VALUE
-      VALUES (10, #{DEFAULT_USER_ID}, 'TITLE', 'BODY', timezone('utc', now()), timezone('utc', now()));
+      INSERT INTO "articles" (id, title, body, created_at, updated_at) OVERRIDING SYSTEM VALUE
+      VALUES (10, 'TITLE', 'BODY', timezone('utc', now()), timezone('utc', now()));
     SQL
 
     response = self.get "/article/10", headers: HTTP::Headers{"accept" => "text/html"}

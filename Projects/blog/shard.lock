@@ -36,27 +36,15 @@ shards:
     git: https://github.com/athena-framework/validator.git
     version: 0.1.7
 
-  bindata:
-    git: https://github.com/spider-gazelle/bindata.git
-    version: 1.9.1
-
   crinja:
     git: https://github.com/straight-shoota/crinja.git
     version: 0.8.0
 
   db:
     git: https://github.com/crystal-lang/crystal-db.git
-    version: 0.10.1
-
-  jwt:
-    git: https://github.com/crystal-community/jwt.git
-    version: 1.6.0
-
-  openssl_ext:
-    git: https://github.com/spider-gazelle/openssl_ext.git
-    version: 2.1.5
+    version: 0.11.0
 
   pg:
     git: https://github.com/will/crystal-pg.git
-    version: 0.24.0
+    version: 0.26.0
 
