@@ -2,11 +2,11 @@ require "yaml"
 require "json"
 
 module Transform::YAML
-  def self.deserialize(input : String) : String
-    ::YAML.parse(input).to_json
+  def self.deserialize(input : IO, output : IO) : Nil
+    ::YAML.parse(input).to_json output
   end
 
-  def self.serialize(input : String) : String
-    JSON.parse(input).to_yaml
+  def self.serialize(input : IO, output : IO) : Nil
+    JSON.parse(input).to_yaml output
   end
 end
