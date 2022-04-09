@@ -4,7 +4,7 @@ version: 0.1.0
 authors:
   - George Dietrich <george@dietrich.app>
 
-crystal: 1.0.0
+crystal: ~> 1.4
 
 license: MIT
 

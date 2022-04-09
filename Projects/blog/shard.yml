@@ -24,6 +24,6 @@ targets:
   blog:
     main: src/server.cr
 
-crystal: 1.3.0
+crystal: ~> 1.4
 
 license: MIT

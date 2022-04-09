@@ -1,3 +1,5 @@
+require "./lib_notify/*"
+
 class Transform::Processor
   def initialize(@emitter : Transform::NotificationEmitter = Transform::NotificationEmitter.new); end
 

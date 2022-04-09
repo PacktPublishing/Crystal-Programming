@@ -6,7 +6,7 @@ processor = Transform::Processor.new
 multi_file_mode = false
 
 OptionParser.parse do |parser|
-  parser.banner = "Usage: transform <filter> [options] [arguments] [filename]"
+  parser.banner = "Usage: transform <filter> [options] [arguments] [filename...]"
   parser.on("-m", "--multi", "Enables multiple file input mode") { multi_file_mode = true }
   parser.on("-h", "--help", "Show this help") do
     puts parser
