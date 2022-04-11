@@ -4,7 +4,7 @@ services:
     image: postgres:14-alpine
     container_name: pg
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       - POSTGRES_USER=blog_user
       - POSTGRES_PASSWORD=mYAw3s0meB!log
