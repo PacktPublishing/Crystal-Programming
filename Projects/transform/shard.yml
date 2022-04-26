@@ -1,0 +1,13 @@
+name: transform
+version: 0.1.0
+
+authors:
+  - George Dietrich <george@dietrich.app>
+
+crystal: ~> 1.4
+
+license: MIT
+
+targets:
+  transform:
+    main: src/transform_cli.cr

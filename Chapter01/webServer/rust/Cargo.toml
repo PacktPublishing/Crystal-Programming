@@ -1,0 +1,9 @@
+[package]
+name = "hellorust"
+version = "0.0.0"
+edition = "2018"
+publish = false
+
+[dependencies]
+hyper = { version = "0.14.9", features = ["full"]}
+tokio = { version = "1.7.1", features = ["macros", "rt-multi-thread"] }

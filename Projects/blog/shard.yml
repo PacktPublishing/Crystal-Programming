@@ -1,0 +1,29 @@
+name: blog
+version: 0.1.0
+
+authors:
+  - George Dietrich <george@dietrich.app>
+
+dependencies:
+  athena:
+    github: athena-framework/framework
+    version: ~> 0.16.0
+  pg:
+    github: will/crystal-pg
+    version: ~> 0.26.0
+  crinja:
+    github: straight-shoota/crinja
+    version: ~> 0.8.0
+
+development_dependencies:
+  athena-spec:
+    github: athena-framework/spec
+    version: ~> 0.2.3
+
+targets:
+  blog:
+    main: src/server.cr
+
+crystal: ~> 1.4
+
+license: MIT

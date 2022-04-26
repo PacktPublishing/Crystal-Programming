@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>notify: Libnotify Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libnotify Reference Manual">
+<link rel="up" href="ch01.html" title="Libnotify">
+<link rel="prev" href="ch01.html" title="Libnotify">
+<link rel="next" href="NotifyNotification.html" title="NotifyNotification">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnotify-notify.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NotifyNotification.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnotify-notify"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnotify-notify.top_of_page"></a>notify</span></h2>
+<p>notify — Notification API</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnotify-notify.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-init" title="notify_init ()">notify_init</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-uninit" title="notify_uninit ()">notify_uninit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-is-initted" title="notify_is_initted ()">notify_is_initted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-get-app-name" title="notify_get_app_name ()">notify_get_app_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-set-app-name" title="notify_set_app_name ()">notify_set_app_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-get-server-caps" title="notify_get_server_caps ()">notify_get_server_caps</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libnotify-notify.html#notify-get-server-info" title="notify_get_server_info ()">notify_get_server_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnotify-notify.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libnotify-notify.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="notify-init"></a><h3>notify_init ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_init (<em class="parameter"><code>const <span class="type">char</span> *app_name</code></em>);</pre>
+<p>Initialized libnotify. This must be called before any other functions.</p>
+<div class="refsect3">
+<a name="notify-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app_name</p></td>
+<td class="parameter_description"><p>The name of the application initializing libnotify.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-init.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful, or <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on error.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-uninit"></a><h3>notify_uninit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_uninit (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Uninitialized libnotify.</p>
+<p>This should be called when the program no longer needs libnotify for
+the rest of its lifecycle, typically just before exitting.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-is-initted"></a><h3>notify_is_initted ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_is_initted (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Gets whether or not libnotify is initialized.</p>
+<div class="refsect3">
+<a name="notify-is-initted.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if libnotify is initialized, or <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-get-app-name"></a><h3>notify_get_app_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+notify_get_app_name (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Gets the application name registered.</p>
+<div class="refsect3">
+<a name="notify-get-app-name.returns"></a><h4>Returns</h4>
+<p> The registered application name, passed to <a class="link" href="libnotify-notify.html#notify-init" title="notify_init ()"><code class="function">notify_init()</code></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-set-app-name"></a><h3>notify_set_app_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+notify_set_app_name (<em class="parameter"><code>const <span class="type">char</span> *app_name</code></em>);</pre>
+<p>Sets the application name.</p>
+<div class="refsect3">
+<a name="notify-set-app-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app_name</p></td>
+<td class="parameter_description"><p>The name of the application</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-get-server-caps"></a><h3>notify_get_server_caps ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+notify_get_server_caps (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Synchronously queries the server for its capabilities and returns them in a <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a>.</p>
+<div class="refsect3">
+<a name="notify-get-server-caps.returns"></a><h4>Returns</h4>
+<p>a <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of server capability strings. Free
+the list elements with <a href="../glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> and the list itself with <a href="../glib/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="notify-get-server-info"></a><h3>notify_get_server_info ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+notify_get_server_info (<em class="parameter"><code><span class="type">char</span> **ret_name</code></em>,
+                        <em class="parameter"><code><span class="type">char</span> **ret_vendor</code></em>,
+                        <em class="parameter"><code><span class="type">char</span> **ret_version</code></em>,
+                        <em class="parameter"><code><span class="type">char</span> **ret_spec_version</code></em>);</pre>
+<p>Synchronously queries the server for its information, specifically, the name, vendor,
+server version, and the version of the notifications specification that it
+is compliant with.</p>
+<div class="refsect3">
+<a name="notify-get-server-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ret_name</p></td>
+<td class="parameter_description"><p>a location to store the server name, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ret_vendor</p></td>
+<td class="parameter_description"><p>a location to store the server vendor, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ret_version</p></td>
+<td class="parameter_description"><p>a location to store the server version, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ret_spec_version</p></td>
+<td class="parameter_description"><p>a location to store the version the service is compliant with, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="notify-get-server-info.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful, and the variables passed will be set, <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+on error. The returned strings must be freed with g_free</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>
