@@ -56,7 +56,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Guilherme Bernal**
 is the chief technology officer at Cubos Tecnologia. He holds a bachelor's degree in TI management. Guilherme co-founded a software development company and several tech start-ups, including one that focused on teaching programming skills to a new generation of developers. He is also a two-time world finalist in the coding competition, ACM ICPC.
 
-**George Dietrich **
+**George Dietrich**
 is a software engineer, open-source aficionado, and Crystal community moderator. He holds a Master of Science degree in internet information systems and a Bachelor of Science degree in information sciences.
 
 
